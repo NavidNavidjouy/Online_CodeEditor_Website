@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============= Responsive ============= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ============= Css ============= -->
+    <link rel="stylesheet" href="{% static 'Css/signup-styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link class="aos-link" href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <title>Nward | ثبت نام</title>
+</head>
+<body>
+  {% if messages %}
+  {% for message in messages %}
+  <div dir="rtl" class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button  class="btn-signup" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+  {% endif %} 
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+    <div class="container">
+        <div class="left-side">
+            <img class="gif" src="{% static 'images/main.png' %}">
+        </div>
+        <div class="right-side">            
+            <form method="POST" action="{% url 'signup' %}">
+                   {% csrf_token %}
+                     {{ form.as_p }}
+                <button class="animated-button" type="submit">
+                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                    <span class="text">Sign Up</span>
+                    <span class="circle"></span>
+                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                  </button>
+                <p class="sign-up"> Do you have an account? <a href="{% url 'login' %}">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" class="aos"></script>
+    <script class="aos-init">
+      AOS.init();
+    </script>
+    <script src="{% static 'JS/sign-up.js' %}"></script>
+</body>
+</html>

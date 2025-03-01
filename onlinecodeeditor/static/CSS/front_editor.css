@@ -1,0 +1,78 @@
+:root {
+    --main-bg: #1a1a1a;
+    --editor-bg: #2d2d2d;
+    --accent: #e0b066;
+    --text: #e0e0e0;
+}
+
+body {
+    background: linear-gradient(135deg, #003366, #004080, #0059b3, #0073e6);
+    color: var(--text);
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+.code-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cm-editor {
+    height: 50vh;
+    font-size: 14px;
+    border-radius: 0 0 15px 15px;
+}
+
+.cm-focused {
+    outline: none !important;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid var(--editor-bg);
+    gap: 5px;
+}
+
+.nav-link {
+    color: var(--text) !important;
+    border: none !important;
+    background: var(--editor-bg) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link.active {
+    background: var(--accent) !important;
+    color: #000 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(224, 176, 102, 0.3);
+}
+
+.preview-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: 20px;
+}
+
+.toolbar {
+    background: var(--editor-bg);
+    padding: 10px;
+    border-radius: 15px 15px 0 0;
+}
+
+@media (max-width: 768px) {
+    .cm-editor {
+        height: 40vh;
+    }
+}
+.CodeMirror-gutters {
+    border-right: 1px solid #ddd;
+    background-color: #00000040 !important;
+    white-space: nowrap;
+}
+.cm-s-monokai.CodeMirror {
+    background-color: #00000040 !important;
+    color: #f8f8f2;
+}
+h1{
+    text-align: center;
+}

@@ -1,0 +1,61 @@
+
+body {
+    background: linear-gradient(135deg, #003366, #004080, #0059b3, #0073e6);
+    color: #d4d4d4;
+}
+
+.editor-container {
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.CodeMirror {
+    height: 500px !important;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.output {
+    background-color: #252526;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: #d4d4d4;
+    white-space: pre-wrap;
+    min-height: 100px;
+    font-family: 'Consolas', monospace;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-run, .btn-reset {
+    margin: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-run:hover, .btn-reset:hover {
+    transform: scale(1.05);
+}
+
+.animate__animated {
+    animation-duration: 1s;
+}
+.cm-s-monokai.CodeMirror {
+    background: #00000036  !important;
+    color: #f8f8f2;
+    }
+.text-success {
+    --bs-text-opacity: 1;
+    color: rgb(255 255 255) !important;
+}
+.CodeMirror-gutters {
+    border-right: 1px solid #ddd;
+    background-color: #00000040 !important;
+    white-space: nowrap;
+}
+.btn-success {
+    background-color: #11111100;
+    border: 2px solid #fff;
+}

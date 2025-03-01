@@ -1,0 +1,47 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Online Editor</title>
+    
+    <!--======== Bootstrap 5 ========-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'Css/python_editor.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/addon/hint/show-hint.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/addon/edit/closebrackets.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="editor-container">
+            <h1 class="text-center text-success mb-4 animate__animated animate__fadeInDown">Python Online Editor🌀</h1>
+            
+            <div class="code-editor mb-3">
+                <textarea id="pythonCode"></textarea>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-success btn-run animate__animated animate__pulse" onclick="runPython()">Run (Ctrl+Enter)</button>
+                <button class="btn btn-danger btn-reset animate__animated animate__pulse" onclick="resetEditor()">Reset</button>
+            </div>
+            
+            <h2 class="text-center text-success mt-4 animate__animated animate__fadeInUp">Output:</h2>
+            <div id="output" class="output animate__animated animate__fadeIn"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/addon/hint/python-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/addon/edit/closebrackets.min.js"></script>
+    <script src="{% static 'JS/python_editor.js' %}"></script>
+</body>
+</html>

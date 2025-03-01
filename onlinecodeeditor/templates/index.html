@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Editor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href={% static "CSS/index.css" %} rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CodeEditor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Languages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="{% url 'profile' %}">profile</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to Online Code Editor</h1>
+            <p>Write, compile, and run code in multiple programming languages with ease.</p>
+            <a href="#features" class="btn btn-primary">Get Started</a>
+        </div>
+    </section>
+
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="text-center">Languages</h2>
+            <div class="row">
+                <a class="link" href="{% url 'python' %}">
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+ 
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+          
+                        <h3>Python</h3>
+                        <p>Python Code Editor</p>
+                    </div>
+                </a>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <a class="link" href="{% url 'frontend' %}">
+                        <img src="https://img.icons8.com/?size=100&id=9QHudN9uBhDv&format=png&color=000000" />
+                        <h3>Multi-Language</h3>
+                        <p>Frontend Code Editor<br>include:<br>Html🥏<br>Css🌀<br>Javascript📀<br>Bootstrap⚛️<br>________________<br>-also link with them<br>-live<br>-whitout delay<br>-Free<br>-Online<br></p>
+                    </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center"> 
+                        <a class="link" href="{% url 'frontend' %}">     
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                        <h3>Html</h3>
+                        <p>Html Code Editor</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">    
+                        <a href="{% url 'frontend' %}">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                        <h3>Css</h3>
+                        <p>Css Code Editor</p>
+                    </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">
+                        <a class="link" href="{% url 'frontend' %}">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                        <h3>Javascript</h3>
+                        <p>Javascript Code Editor</p>
+                    </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center">    
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+                        <h3>Java</h3>
+                        <p>Comming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; CodeEditor. All rights reserved. | <a href="//github.com/NavidNavidjouy">GitHub</a></p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'JS/index.js' %}"></script>
+</body>
+</html>
